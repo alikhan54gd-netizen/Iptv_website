@@ -21,8 +21,12 @@
 
     <div class="trial-badge">
       FREE TRIAL AVAILABLE
-    </div>
-
+    </div><a class="btn"
+   href="https://wa.me/447748079374"
+   target="_blank"
+   onclick="copyTrialMessage()">
+   🎁 Free Trial
+</a>
     <h1>
       Welcome to <span>IPTV.UK</span>
     </h1>
@@ -476,7 +480,21 @@ Result: "🎁 Free Trial" button top par nazar aayega → tap karne par trial me
     }
   </style>
 </head>
+<script>
+function copyTrialMessage() {
+  const message =
+    "Hello IPTV.UK, I would like to request a Free Trial. Please send me the trial details.";
 
+  navigator.clipboard.writeText(message).catch(function() {
+    const textArea = document.createElement("textarea");
+    textArea.value = message;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textArea);
+  });
+}
+</script>
 <body>
 
 <!-- HEADER -->
