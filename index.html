@@ -1,1012 +1,1119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>IPTV.UK | TV Channels & Movies</title>
+<title>IPTV.UK | Premium Streaming</title>
 
 <meta name="description"
-      content="IPTV.UK - TV Channels, Movies and Entertainment">
+content="IPTV.UK premium entertainment plans with live TV, movies and sports.">
+
+<meta name="theme-color" content="#050505">
 
 <style>
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+/* =========================================================
+   IPTV.UK PREMIUM WEBSITE
+   ========================================================= */
+
+:root{
+    --bg:#030303;
+    --bg2:#080808;
+    --card:#101010;
+    --card2:#151515;
+    --text:#ffffff;
+    --muted:#a8a8a8;
+    --purple:#8b5cf6;
+    --blue:#00b7ff;
+    --pink:#ff2d95;
+    --green:#00e676;
+    --gold:#ffd166;
+    --red:#ff416c;
+    --border:rgba(255,255,255,.10);
+    --shadow:0 20px 60px rgba(0,0,0,.55);
+    --radius:24px;
 }
 
-body {
-  background: #050505;
-  color: white;
-  line-height: 1.6;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
-/* FREE TRIAL BADGE */
-
-.trial-badge {
-  display: inline-block;
-  padding: 7px 15px;
-  margin-bottom: 18px;
-  border: 1px solid #00d9ff;
-  border-radius: 30px;
-  color: #00d9ff;
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 1px;
+html{
+    background:#030303;
 }
 
-/* HEADER */
-
-header {
-  padding: 20px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #080808;
-  border-bottom: 1px solid #222;
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%,rgba(139,92,246,.16),transparent 25%),
+        radial-gradient(circle at 90% 20%,rgba(0,183,255,.12),transparent 25%),
+        radial-gradient(circle at 50% 90%,rgba(255,45,149,.10),transparent 30%),
+        #030303;
+    color:var(--text);
+    min-height:100vh;
+    overflow-x:hidden;
 }
 
-.logo {
-  font-size: 25px;
-  font-weight: bold;
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
-.logo span {
-  color: #00d9ff;
+button{
+    font-family:inherit;
 }
 
-nav a
-    }
-<!-- HERO -->
-
-<section class="hero" id="home">
-  <div class="hero-content">
-
-    <div class="trial-badge">
-      FREE TRIAL AVAILABLE
-    </div>
-<a class="btn btn-outline"
-   href="https://wa.me/447748079374"
-   target="_blank"
-    <h1>
-      Welcome to <span>IPTV.UK</span>
-    </h1>
-
-    <p>
-      Explore available live TV channels, movies and
-      entertainment through supported streaming services.
-    </p>
-
-    <a class="btn" href="#pricing">
-      View Plans
-    </a>
-
-    <a class="btn btn-outline"
-       href="https://wa.me/447748079374"
-       target="_blank"
-      <a class="btn btn-outline"
-   href="https://wa.me/447748079374"
-   target="_blank"
-   onclick="copyTrialMessage()">
-   🎁 Free Trial
-</a>
-      onclick="copyTrialMessage()">
-      🎁 Free Trial
-    </a>
-
-  </div>
-</section>
-
-  <div class="hero-content">
-
-    <div class="trial-badge">
-      FREE TRIAL AVAILABLE
-    </div>
-    <a class="btn"
-   href="https://wa.me/447748079374"
-   target="_blank"
-   onclick="copyTrialMessage()">
-   🎁 Free Trial
-</a>
-    <h1>
-      Welcome to <span>IPTV.UK</span>
-    </h1>
-
-    <p>
-      Explore available live TV channels, movies and
-      entertainment through supported streaming services.
-    </p>
-
-    <a class="btn btn-outline" href="#pricing">
-      View Plans
-    </a>
-
-  </div>
-
-</section>
-
-
-<script>
-
-function copyTrialMessage() {
-
-  const message =
-    "Hello IPTV.UK, I would like to request a Free Trial. Please send me the trial details.";
-
-  navigator.clipboard.writeText(message).catch(function() {
-
-    const textArea = document.createElement("textarea");
-
-    textArea.value = message;
-
-    document.body.appendChild(textArea);
-
-    textArea.select();
-
-    document.execCommand("copy");
-
-    document.body.removeChild(textArea);
-
-  });
-
+.container{
+    width:min(1180px,92%);
+    margin:auto;
 }
 
-</script>
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
 
-
-.trial-badge {
-  display: inline-block;
-  padding: 7px 15px;
-  margin-bottom: 18px;
-  border: 1px solid #00d9ff;
-  border-radius: 30px;
-  color: #00d9ff;
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 1px;
+.bg-orb{
+    position:fixed;
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    filter:blur(90px);
+    opacity:.12;
+    pointer-events:none;
+    z-index:-1;
 }
 
-.trial-btn {
-  background: #00d9ff;
-  color: #000;
+.orb-one{
+    background:#8b5cf6;
+    top:100px;
+    left:-120px;
 }
 
-Result: "🎁 Free Trial" button top par nazar aayega → tap karne par trial message copy hoga → WhatsApp "+44 7748 079374" open hoga → customer message paste karke send kar sakta hai.
-
-<section class="hero" id="home">
-
-  <div class="hero-content">
-
-    <div class="trial-badge">
-      FREE TRIAL AVAILABLE
-    </div>
-
-    <h1>
-      Welcome to <span>IPTV.UK</span>
-    </h1>
-
-    <p>
-      Explore available live TV channels, movies and
-      entertainment through supported streaming services.
-    </p>
-
-    <!-- FREE TRIAL BUTTON -->
-
-    <a
-      class="btn trial-btn"
-      href="https://wa.me/447748079374"
-      target="_blank"
-      onclick="copyTrialMessage()">
-      🎁 Free Trial
-    </a>
-
-    <a class="btn btn-outline" href="#pricing">
-      View Plans
-    </a>
-
-  </div>
-
-</section>
-
-
-<script>
-
-function copyTrialMessage() {
-
-  const message =
-    "Hello IPTV.UK, I would like to request a Free Trial. Please send me the trial details.";
-
-  navigator.clipboard.writeText(message).catch(function() {
-
-    const textArea = document.createElement("textarea");
-
-    textArea.value = message;
-
-    document.body.appendChild(textArea);
-
-    textArea.select();
-
-    document.execCommand("copy");
-
-    document.body.removeChild(textArea);
-
-  });
-
+.orb-two{
+    background:#00b7ff;
+    top:45%;
+    right:-120px;
 }
 
-</script>
-
-Aur "<style>" ke andar ye CSS add kar do:
-
-.trial-badge {
-  display: inline-block;
-  padding: 7px 15px;
-  margin-bottom: 18px;
-  border: 1px solid #00d9ff;
-  border-radius: 30px;
-  color: #00d9ff;
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 1px;
+.orb-three{
+    background:#ff2d95;
+    bottom:-100px;
+    left:35%;
 }
 
-.trial-btn {
-  background: #00d9ff;
-  color: #000;
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.topbar{
+    background:linear-gradient(
+        90deg,
+        rgba(139,92,246,.14),
+        rgba(0,183,255,.10),
+        rgba(255,45,149,.12)
+    );
+    border-bottom:1px solid var(--border);
+    padding:10px 0;
+    text-align:center;
+    font-size:13px;
+    color:#ddd;
 }
 
-Result: "🎁 Free Trial" button top par nazar aayega → tap karne par trial message copy hoga → WhatsApp "+44 7748 079374" open hoga → customer message paste karke send kar sakta hai.
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: #050505;
-      color: #fff;
-      line-height: 1.6;
-    }
-
-    header {
-      padding: 20px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #080808;
-      border-bottom: 1px solid #222;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
-    }
-
-    .logo span {
-      color: #00d9ff;
-    }
-
-    nav a {
-      color: #bbb;
-      text-decoration: none;
-      margin-left: 22px;
-      font-size: 15px;
-    }
-
-    nav a:hover {
-      color: #00d9ff;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 75vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 20px;
-      background:
-        radial-gradient(circle at center, #191919 0%, #050505 70%);
-    }
-
-    .hero-content {
-      max-width: 800px;
-    }
-
-    .hero h1 {
-      font-size: 55px;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: #00d9ff;
-    }
-
-    .hero p {
-      color: #aaa;
-      font-size: 18px;
-      margin-bottom: 25px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 27px;
-      margin: 7px;
-      border-radius: 7px;
-      background: #00d9ff;
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.85;
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: white;
-      border: 1px solid #555;
-    }
-
-    /* GENERAL */
-
-    section {
-      padding: 75px 8%;
-    }
-
-    .title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .title h2 {
-      font-size: 35px;
-      margin-bottom: 10px;
-    }
-
-    .title p {
-      color: #999;
-    }
-
-    /* FEATURES */
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .feature {
-      background: #101010;
-      border: 1px solid #252525;
-      border-radius: 14px;
-      padding: 32px;
-      text-align: center;
-    }
-
-    .feature-icon {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
-
-    .feature h3 {
-      margin-bottom: 10px;
-    }
-
-    .feature p {
-      color: #999;
-    }
-
-    /* PRICING */
-
-    .plans {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .plan {
-      background: #101010;
-      border: 1px solid #292929;
-      border-radius: 16px;
-      padding: 30px;
-    }
-
-    .plan.premium {
-      border: 1px solid #00d9ff;
-    }
-
-    .plan h3 {
-      text-align: center;
-      font-size: 29px;
-      margin-bottom: 25px;
-    }
-
-    .duration {
-      padding: 20px 0;
-      border-bottom: 1px solid #252525;
-    }
-
-    .duration:last-child {
-      border-bottom: none;
-    }
-
-    .duration-title {
-      font-size: 19px;
-      font-weight: bold;
-    }
-
-    .price {
-      float: right;
-      color: #00d9ff;
-      font-size: 21px;
-    }
-
-    .characteristics {
-      margin-top: 12px;
-    }
-
-    .characteristics p {
-      color: #aaa;
-      font-size: 14px;
-      padding: 3px 0;
-    }
-
-    /* CREDITS */
-
-    .credits {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .credit-card {
-      background: #101010;
-      border: 1px solid #292929;
-      border-radius: 14px;
-      padding: 32px;
-      text-align: center;
-    }
-
-    .credit-card h3 {
-      font-size: 25px;
-    }
-
-    .credit-price {
-      color: #00d9ff;
-      font-size: 21px;
-      font-weight: bold;
-      margin: 12px 0;
-    }
-
-    .credit-info {
-      color: #999;
-      font-size: 14px;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      text-align: center;
-      background: #0b0b0b;
-    }
-
-    /* FOOTER */
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #777;
-      border-top: 1px solid #222;
-      font-size: 14px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 750px) {
-
-      header {
-        padding: 18px 5%;
-      }
-
-      nav {
-        display: none;
-      }
-
-      .hero {
-        min-height: 65vh;
-      }
-
-      .hero h1 {
-        font-size: 38px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      section {
-        padding: 55px 5%;
-      }
-
-      .features,
-      .plans,
-      .credits {
-        grid-template-columns: 1fr;
-      }
-
-      .title h2 {
-        font-size: 29px;
-      }
-    }
-  </style>
-</head>
-<script>
-function copyTrialMessage() {
-  const message =
-    "Hello IPTV.UK, I would like to request a Free Trial. Please send me the trial details.";
-
-  navigator.clipboard.writeText(message).catch(function() {
-    const textArea = document.createElement("textarea");
-    textArea.value = message;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textArea);
-  });
+.topbar span{
+    color:#fff;
+    font-weight:bold;
 }
-</script>
-<body>
 
-<!-- HEADER -->
-
-<header>
-
-  <div class="logo">
-    IPTV<span>.UK</span>
-  </div>
-
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#features">Features</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#credits">Credits</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-</header>
-
-
-<!-- HERO -->
-
-<section class="hero" id="home">
-
-  <div class="hero-content">
-
-    <h1>
-      Welcome to <span>IPTV.UK</span>
-    </h1>
-
-    <p>
-      Explore available live TV channels, movies and
-      entertainment through supported streaming services.
-    </p>
-
-    <a class="btn" href="#pricing">
-      View Plans
-    </a>
-
-    <a
-      class="btn btn-outline"
-      href="https://wa.me/447748079374"
-      target="_blank">
-      WhatsApp Us
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- FEATURES -->
-
-<section id="features">
-
-  <div class="title">
-
-    <h2>Entertainment Features</h2>
-
-    <p>
-      Simple access to available entertainment
-      across compatible devices.
-    </p>
-
-  </div>
-
-
-  <div class="features">
-
-    <div class="feature">
-
-      <div class="feature-icon">📺</div>
-
-      <h3>Live TV Channels</h3>
-
-      <p>
-        Enjoy available live television channels
-        included with your selected service.
-      </p>
-
-    </div>
-
-
-    <div class="feature">
-
-      <div class="feature-icon">🎬</div>
-
-      <h3>Movies & Entertainment</h3>
-
-      <p>
-        Browse available movies and entertainment
-        content included with your plan.
-      </p>
-
-    </div>
-
-
-    <div class="feature">
-
-      <div class="feature-icon">📱</div>
-
-      <h3>Supported Devices</h3>
-
-      <p>
-        Compatible with supported Smart TVs,
-        phones, tablets and streaming devices.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- PRICING -->
-
-<section id="pricing">
-
-  <div class="title">
-
-    <h2>Subscription Plans</h2>
-
-    <p>
-      Choose the plan and duration that suits you.
-    </p>
-
-  </div>
-
-
-  <div class="plans">
-
-
-    <!-- BASIC -->
-
-    <div class="plan">
-
-      <h3>Basic</h3>
-
-
-      <!-- MONTHLY -->
-
-      <div class="duration">
-
-        <div class="duration-title">
-          Monthly
-          <span class="price">£10</span>
-        </div>
-
-        <div class="characteristics">
-
-          <p>✓ Available Live TV Channels</p>
-          <p>✓ Available Movies & Entertainment</p>
-          <p>✓ Supported Devices</p>
-          <p>✓ Customer Support</p>
-
-        </div>
-
-      </div>
-
-
-      <!-- 3 MONTHS -->
-
-      <div class="duration">
-
-        <div class="duration-title">
-          3 Months
-          <span class="price">£25</span>
-        </div>
-
-        <div class="characteristics">
-
-          <p>✓ Available Live TV Channels</p>
-          <p>✓ Available Movies & Entertainment</p>
-          <p>✓ Supported Devices</p>
-          <p>✓ Customer Support</p>
-
-        </div>
-
-      </div>
-
-
-      <!-- YEARLY -->
-
-      <div class="duration">
-
-        <div class="duration-title">
-          Yearly
-          <span class="price">£49.99</span>
-        </div>
-
-        <div class="characteristics">
-
-          <p>✓ Available Live TV Channels</p>
-          <p>✓ Available Movies & Entertainment</p>
-          <p>✓ Supported Devices</p>
-          <p>✓ Customer Support</p>
-
-        </div>
-
-      </div>
-
-
-      <div style="text-align:center;">
-
-        <a
-          class="btn"
-          href="https://wa.me/447748079374"
-          target="_blank">
-          Order Basic
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- PREMIUM -->
-
-    <div class="plan premium">
-
-      <h3>Premium</h3>
-
-
-      <!-- MONTHLY -->
-
-      <div class="duration">
-
-        <div class="duration-title">
-          Monthly
-          <span class="price">£14</span>
-        </div>
-
-        <div class="characteristics">
-
-          <p>✓ Available Live TV Channels</p>
-          <p>✓ Available Movies & Entertainment</p>
-          <p>✓ HD / 4K where available</p>
-          <p>✓ Supported Devices</p>
-          <p>✓ Priority Customer Support</p>
-
-        </div>
-
-      </div>
-
-
-      <!-- 3 MONTHS -->
-
-      <div class="duration">
-
-        <div class="duration-title">
-          3 Months
-          <span class="price">£35</span>
-        </div>
-
-        <div class="characteristics">
-
-          <p>✓ Available Live TV Channels</p>
-          <p>✓ Available Movies & Entertainment</p>
-          <p>✓ HD / 4K where available</p>
-          <p>✓ Supported Devices</p>
-          <p>✓ Priority Customer Support</p>
-
-        </div>
-
-      </div>
-
-
-      <!-- YEARLY -->
-
-      <div class="duration">
-
-        <div class="duration-title">
-          Yearly
-          <span class="price">£69.99</span>
-        </div>
-
-        <div class="characteristics">
-
-          <p>✓ Available Live TV Channels</p>
-          <p>✓ Available Movies & Entertainment</p>
-          <p>✓ HD / 4K where available</p>
-          <p>✓ Supported Devices</p>
-          <p>✓ Priority Customer Support</p>
-
-        </div>
-
-      </div>
-
-
-      <div style="text-align:center;">
-
-        <a
-          class="btn"
-          href="https://wa.me/447748079374"
-          target="_blank">
-          Order Premium
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- CREDITS -->
-
-<section id="credits">
-
-  <div class="title">
-
-    <h2>Credit Plans</h2>
-
-    <p>
-      Choose your preferred credit package.
-    </p>
-
-  </div>
-
-
-  <div class="credits">
-
-
-    <div class="credit-card">
-
-      <h3>50 Credits</h3>
-
-      <div class="credit-price">
-        £2 per credit
-      </div>
-
-      <div class="credit-info">
-        50 credit package
-      </div>
-
-      <a
-        class="btn"
-        href="https://wa.me/447748079374"
-        target="_blank">
-        Enquire
-      </a>
-
-    </div>
-
-
-    <div class="credit-card">
-
-      <h3>100 Credits</h3>
-
-      <div class="credit-price">
-        £1.50 per credit
-      </div>
-
-      <div class="credit-info">
-        100 credit package
-      </div>
-
-      <a
-        class="btn"
-        href="https://wa.me/447748079374"
-        target="_blank">
-        Enquire
-      </a>
-
-    </div>
-
-
-    <div class="credit-card">
-
-      <h3>200 Credits</h3>
-
-      <div class="credit-price">
-        £1.50 per credit
-      </div>
-
-      <div class="credit-info">
-        200 credit package
-      </div>
-
-      <a
-        class="btn"
-        href="https://wa.me/447748079374"
-        target="_blank">
-        Enquire
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="contact" id="contact">
-
-  <div class="title">
-
-    <h2>Get In Touch</h2>
-
-    <p>
-      Have a question? Contact us on WhatsApp.
-    </p>
-
-    <a
-      class="btn"
-      href="https://wa.me/447748079374"
-      target="_blank">
-      WhatsApp Us
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-  © 2026 IPTV.UK — All rights reserved.
-
-</footer>
-
-<script>
-function copyTrialMessage() {
-  const message =
-    "Hello IPTV.UK, I would like to request a Free Trial. Please send me the trial details.";
-
-  navigator.clipboard.writeText(message);
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(18px);
+    background:rgba(3,3,3,.82);
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
-</script>
-</body>
-</html>
+
+.nav-inner{
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.logo .dot{
+    color:var(--blue);
+}
+
+.logo small{
+    display:block;
+    font-size:8px;
+    letter-spacing:3px;
+    color:#777;
+    margin-top:-2px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav-links a{
+    color:#aaa;
+    font-size:14px;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:#fff;
+}
+
+.nav-trial{
+    border:1px solid rgba(0,183,255,.45);
+    padding:11px 17px;
+    border-radius:999px;
+    color:#fff!important;
+    background:rgba(0,183,255,.08);
+}
+
+.menu-btn{
+    display:none;
+    border:1px solid var(--border);
+    background:#111;
+    color:#fff;
+    width:44px;
+    height:44px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:20px;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+    min-height:680px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    padding:90px 0 80px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:60px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 14px;
+    border-radius:999px;
+    background:rgba(139,92,246,.10);
+    border:1px solid rgba(139,92,246,.35);
+    color:#d8c9ff;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:22px;
+}
+
+.badge i{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#00e676;
+    box-shadow:0 0 12px #00e676;
+}
+
+.hero h1{
+    font-size:clamp(44px,7vw,78px);
+    line-height:.98;
+    letter-spacing:-4px;
+    margin-bottom:25px;
+}
+
+.gradient-text{
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #8b5cf6,
+        #00b7ff,
+        #ff2d95
+    );
+    -webkit-background-clip:text;
+    color:transparent;
+    background-clip:text;
+}
+
+.hero p{
+    max-width:650px;
+    color:#aaa;
+    line-height:1.8;
+    font-size:17px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:32px;
+}
+
+.primary-btn,
+.secondary-btn{
+    border:0;
+    cursor:pointer;
+    border-radius:15px;
+    padding:15px 23px;
+    font-size:15px;
+    font-weight:800;
+    transition:.3s;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+}
+
+.primary-btn{
+    color:#fff;
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #00b7ff,
+        #ff2d95
+    );
+    box-shadow:
+        0 12px 35px rgba(139,92,246,.22),
+        0 0 30px rgba(0,183,255,.08);
+}
+
+.primary-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 45px rgba(0,183,255,.25);
+}
+
+.secondary-btn{
+    color:#fff;
+    background:#111;
+    border:1px solid var(--border);
+}
+
+.secondary-btn:hover{
+    background:#181818;
+    transform:translateY(-3px);
+}
+
+/* =========================================================
+   HERO VISUAL
+   ========================================================= */
+
+.hero-visual{
+    position:relative;
+    min-height:470px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.screen{
+    width:100%;
+    max-width:450px;
+    aspect-ratio:16/11;
+    border-radius:30px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(139,92,246,.35),
+            rgba(0,183,255,.13),
+            rgba(255,45,149,.2)
+        );
+    border:1px solid rgba(255,255,255,.14);
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.7),
+        inset 0 0 80px rgba(255,255,255,.03);
+    padding:15px;
+    transform:rotate(2deg);
+}
+
+.screen-inner{
+    width:100%;
+    height:100%;
+    border-radius:22px;
+    background:#080808;
+    padding:18px;
+    overflow:hidden;
+}
+
+.screen-top{
+    display:flex;
+    justify-content:space-between;
+    color:#888;
+    font-size:10px;
+    margin-bottom:16px;
+}
+
+.screen-title{
+    font-size:23px;
+    font-weight:900;
+    margin-bottom:14px;
+}
+
+.screen-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:9px;
+}
+
+.screen-item{
+    height:75px;
+    border-radius:12px;
+    display:flex;
+    align-items:flex-end;
+    padding:8px;
+    font-size:9px;
+    font-weight:bold;
+    background:linear-gradient(
+        135deg,
+        #26114b,
+        #061b2c
+    );
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.screen-item:nth-child(2){
+    background:linear-gradient(135deg,#40132c,#111c44);
+}
+
+.screen-item:nth-child(3){
+    background:linear-gradient(135deg,#142f1e,#111);
+}
+
+.screen-item:nth-child(4){
+    background:linear-gradient(135deg,#31200c,#22103b);
+}
+
+.screen-item:nth-child(5){
+    background:linear-gradient(135deg,#071e31,#28103c);
+}
+
+.screen-item:nth-child(6){
+    background:linear-gradient(135deg,#32101b,#101a32);
+}
+
+.float-card{
+    position:absolute;
+    background:rgba(15,15,15,.92);
+    backdrop-filter:blur(16px);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:15px 17px;
+    box-shadow:var(--shadow);
+}
+
+.float-one{
+    left:-15px;
+    bottom:55px;
+}
+
+.float-two{
+    right:-12px;
+    top:65px;
+}
+
+.float-card strong{
+    display:block;
+    font-size:20px;
+}
+
+.float-card span{
+    color:#888;
+    font-size:11px;
+}
+
+/* =========================================================
+   TRUST BAR
+   ========================================================= */
+
+.trust{
+    padding:18px 0;
+}
+
+.trust-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border:1px solid var(--border);
+    border-radius:20px;
+    background:rgba(255,255,255,.025);
+    overflow:hidden;
+}
+
+.trust-item{
+    padding:20px;
+    text-align:center;
+    border-right:1px solid var(--border);
+}
+
+.trust-item:last-child{
+    border-right:0;
+}
+
+.trust-item strong{
+    display:block;
+    font-size:20px;
+    margin-bottom:5px;
+}
+
+.trust-item span{
+    color:#777;
+    font-size:11px;
+}
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.section{
+    padding:100px 0;
+}
+
+.section-heading{
+    text-align:center;
+    max-width:750px;
+    margin:0 auto 50px;
+}
+
+.section-heading .mini{
+    color:var(--blue);
+    text-transform:uppercase;
+    font-size:11px;
+    letter-spacing:3px;
+    font-weight:900;
+    margin-bottom:12px;
+}
+
+.section-heading h2{
+    font-size:clamp(32px,5vw,52px);
+    letter-spacing:-2px;
+    margin-bottom:15px;
+}
+
+.section-heading p{
+    color:#888;
+    line-height:1.7;
+}
+
+/* =========================================================
+   FEATURE CARDS
+   ========================================================= */
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.feature-card{
+    position:relative;
+    padding:30px;
+    min-height:230px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    transition:.3s;
+}
+
+.feature-card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(139,92,246,.4);
+}
+
+.feature-card::after{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:#8b5cf6;
+    filter:blur(65px);
+    opacity:.10;
+    right:-40px;
+    bottom:-40px;
+}
+
+.feature-icon{
+    width:54px;
+    height:54px;
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    margin-bottom:20px;
+    background:linear-gradient(
+        135deg,
+        rgba(139,92,246,.25),
+        rgba(0,183,255,.15)
+    );
+}
+
+.feature-card h3{
+    font-size:19px;
+    margin-bottom:10px;
+}
+
+.feature-card p{
+    color:#858585;
+    line-height:1.65;
+    font-size:14px;
+}
+
+/* =========================================================
+   CONTENT STATS
+   ========================================================= */
+
+.stats-section{
+    padding:40px 0 100px;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.stat-card{
+    padding:28px 20px;
+    text-align:center;
+    border-radius:20px;
+    background:#0d0d0d;
+    border:1px solid var(--border);
+}
+
+.stat-number{
+    font-size:35px;
+    font-weight:900;
+    background:linear-gradient(90deg,#fff,#00b7ff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.stat-label{
+    color:#777;
+    font-size:12px;
+    margin-top:6px;
+}
+
+/* =========================================================
+   PRICING
+   ========================================================= */
+
+.pricing-section{
+    padding:100px 0;
+}
+
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+    align-items:stretch;
+}
+
+.plan-card{
+    position:relative;
+    padding:34px;
+    border-radius:28px;
+    background:
+        linear-gradient(
+            145deg,
+            #111,
+            #080808
+        );
+    border:1px solid rgba(255,255,255,.09);
+    overflow:hidden;
+    transition:.35s;
+}
+
+.plan-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(0,183,255,.35);
+    box-shadow:0 25px 80px rgba(0,0,0,.45);
+}
+
+.plan-card.premium{
+    border-color:rgba(139,92,246,.38);
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(139,92,246,.15),
+            transparent 40%
+        ),
+        #0d0d0d;
+}
+
+.plan-card.premium::before{
+    content:"POPULAR";
+    position:absolute;
+    top:20px;
+    right:-35px;
+    transform:rotate(45deg);
+    background:linear-gradient(90deg,#8b5cf6,#ff2d95);
+    padding:7px 40px;
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.plan-name{
+    color:#aaa;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-weight:bold;
+}
+
+.plan-card h3{
+    font-size:32px;
+    margin:8px 0 8px;
+}
+
+.plan-description{
+    color:#777;
+    font-size:13px;
+    line-height:1.6;
+    min-height:42px;
+}
+
+.price-list{
+    margin-top:25px;
+    display:grid;
+    gap:10px;
+}
+
+.price-row{
+    display:grid;
+    grid-template-columns:1fr 100px 85px;
+    align-items:center;
+    gap:8px;
+    padding:14px;
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:15px;
+}
+
+.price-row span:first-child{
+    font-size:13px;
+    color:#bbb;
+}
+
+.price{
+    font-size:17px;
+    font-weight:900;
+    text-align:right;
+}
+
+.select-btn{
+    border:0;
+    padding:9px 10px;
+    border-radius:10px;
+    cursor:pointer;
+    background:#1c1c1c;
+    color:#fff;
+    font-size:11px;
+    font-weight:900;
+    transition:.25s;
+}
+
+.select-btn:hover{
+    background:linear-gradient(135deg,#8b5cf6,#00b7ff);
+}
+
+/* =========================================================
+   PLAN DETAILS
+   ========================================================= */
+
+.details-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+    margin-top:25px;
+}
+
+.details-card{
+    padding:30px;
+    border-radius:24px;
+    background:#0c0c0c;
+    border:1px solid var(--border);
+}
+
+.details-card h3{
+    margin-bottom:20px;
+    font-size:20px;
+}
+
+.check-list{
+    list-style:none;
+    display:grid;
+    gap:13px;
+}
+
+.check-list li{
+    color:#aaa;
+    font-size:13px;
+    display:flex;
+    gap:10px;
+    line-height:1.5;
+}
+
+.check-list li::before{
+    content:"✓";
+    color:#00e676;
+    font-weight:900;
+}
+
+/* =========================================================
+   CREDITS
+   ========================================================= */
+
+.credit-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.credit-card{
+    position:relative;
+    padding:30px;
+    text-align:center;
+    border-radius:23px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,.015)
+        );
+    border:1px solid var(--border);
+    overflow:hidden;
+}
+
+.credit-card:nth-child(1){
+    box-shadow:inset 0 0 80px rgba(139,92,246,.04);
+}
+
+.credit-card:nth-child(2){
+    box-shadow:inset 0 0 80px rgba(0,183,255,.04);
+}
+
+.credit-card:nth-child(3){
+    box-shadow:inset 0 0 80px rgba(255,45,149,.04);
+}
+
+.credit-number{
+    font-size:40px;
+    font-weight:900;
+}
+
+.credit-unit{
+    color:#777;
+    font-size:12px;
+}
+
+.credit-rate{
+    margin:12px 0;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.credit-note{
+    color:#777;
+    font-size:11px;
+}
+
+/* =========================================================
+   DEVICES
+   ========================================================= */
+
+.devices-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
+}
+
+.device{
+    padding:25px 12px;
+    border-radius:18px;
+    text-align:center;
+    border:1px solid var(--border);
+    background:#0c0c0c;
+    transition:.3s;
+}
+
+.device:hover{
+    transform:translateY(-5px);
+    background:#121212;
+}
+
+.device-icon{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.device span{
+    display:block;
+    color:#999;
+    font-size:11px;
+}
+
+/* =========================================================
+   HOW IT WORKS
+   ========================================================= */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    counter-reset:step;
+}
+
+.step{
+    position:relative;
+    padding:28px;
+    border-radius:22px;
+    background:#0d0d0d;
+    border:1px solid var(--border);
+}
+
+.step-number{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#8b5cf6,#00b7ff);
+    font-weight:900;
+    margin-bottom:18px;
+}
+
+.step h3{
+    margin-bottom:10px;
+    font-size:17px;
+}
+
+.step p{
+    color:#777;
+    font-size:13px;
+    line-height:1.6;
+}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.faq{
+    max-width:850px;
+    margin:auto;
+}
+
+.faq-item{
+    border:1px solid var(--border);
+    border-radius:17px;
+    background:#0c0c0c;
+    margin-bottom:11px;
+    overflow:hidden;
+}
+
+.faq-question{
+    width:100%;
+    border:0;
+    background:transparent;
+    color:#fff;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    text-align:left;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.faq-plus{
+    font-size:20px;
+    color:#888;
+    transition:.3s;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:.3s;
+    color:#888;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.faq-answer-inner{
+    padding:0 20px 20px;
+}
+
+.faq-item.active .faq-answer{
+    max-height:200px;
+}
+
+.faq-item.active .faq-plus{
+    transform:rotate(45deg);
+    color:#fff;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.cta{
+    padding:100px 0;
+}
+
+.cta-box{
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+    padding:70px 25px;
+    border-radius:32px;
+    border:1px solid rgba(139,92,246,.28);
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(139,92,246,.22),
+            transparent 55%
+        ),
+        #0b0b0b;
+}
+
+.cta-box h2{
+    font-size:clamp(32px,5vw,52px);
+    letter-spacing:-2px;
+    margin-bottom:15px;
+}
+
+.cta-box p{
+    color:#888;
+    max-width:600px;
+    margin:0 auto 28px;
+    line-height:1.7;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+    border-top:1px solid var(--border);
+    padding:55px 0 25px;
+    background:#050505;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-brand p{
+    color:#777;
+    font-size:13px;
+    line-height:1.7;
+    max-width:350px;
+    margin-top:15px;
+}
+
+.footer-col h4{
+    margin-bottom:15px;
+    font-size:13px;
+}
+
+.footer-col a{
+    display:block;
+    color:#777;
+    font-size:12px;
+    margin-bottom:11px;
+}
+
+.footer-col a:hover{
+    color:#fff;
+}
+
+.copyright{
+    margin-top:45px;
+    padding-top:20px;
+    border-top:1px solid var(--border);
+    color:#555;
+    font-size:11px;
+    text-align:center;
+}
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    transform:translate(-50%,120px);
+    z-index:5000;
+    min-width:270px;
+    max-width:90%;
+    padding:15px 20px;
+    border-radius:15px;
+    background:#151515;
+    border:1px solid rgba(0,230,118,.3);
+    box-shadow:0 15px 50px rgba(0,0,0,.55);
+    color:#fff;
+    text-align:center;
+    font-size:13px;
+    transition:.35s;
+}
+
+.toast.show{
+    transform:translate(-50%,0);
+}
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.mobile-menu{
+    display:none;
+    padding:15px 0 20px;
+    border-top:1px solid var(--border);
+}
+
+.mobile-menu a{
+    display:block;
+    padding:13px 0;
+    color:#aaa
