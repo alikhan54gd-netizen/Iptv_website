@@ -13,7 +13,91 @@
       box-sizing: border-box;
       font-family: Arial, sans-serif;
     }
-<!-- HERO -->
+<!-- HERO --><!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <div class="trial-badge">
+      FREE TRIAL AVAILABLE
+    </div>
+
+    <h1>
+      Welcome to <span>IPTV.UK</span>
+    </h1>
+
+    <p>
+      Explore available live TV channels, movies and
+      entertainment through supported streaming services.
+    </p>
+
+    <!-- FREE TRIAL BUTTON -->
+
+    <a
+      class="btn trial-btn"
+      href="https://wa.me/447748079374"
+      target="_blank"
+      onclick="copyTrialMessage()">
+      🎁 Free Trial
+    </a>
+
+    <a class="btn btn-outline" href="#pricing">
+      View Plans
+    </a>
+
+  </div>
+
+</section>
+
+
+<script>
+
+function copyTrialMessage() {
+
+  const message =
+    "Hello IPTV.UK, I would like to request a Free Trial. Please send me the trial details.";
+
+  navigator.clipboard.writeText(message).catch(function() {
+
+    const textArea = document.createElement("textarea");
+
+    textArea.value = message;
+
+    document.body.appendChild(textArea);
+
+    textArea.select();
+
+    document.execCommand("copy");
+
+    document.body.removeChild(textArea);
+
+  });
+
+}
+
+</script>
+
+Aur "<style>" ke andar ye CSS add kar do:
+
+.trial-badge {
+  display: inline-block;
+  padding: 7px 15px;
+  margin-bottom: 18px;
+  border: 1px solid #00d9ff;
+  border-radius: 30px;
+  color: #00d9ff;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.trial-btn {
+  background: #00d9ff;
+  color: #000;
+}
+
+Result: "🎁 Free Trial" button top par nazar aayega → tap karne par trial message copy hoga → WhatsApp "+44 7748 079374" open hoga → customer message paste karke send kar sakta hai.
 
 <section class="hero" id="home">
 
